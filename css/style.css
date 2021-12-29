@@ -1,0 +1,23 @@
+body {
+    background-color: #161616;
+    color: #ebebeb;
+}
+
+h1 {
+    font-size: 5em;
+    text-align: center;
+}
+
+#bookshelf-container {
+    margin-top: 5em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 5em 0em;
+}
+
+.book {
+    background-color: #ff133c;
+    width: 20%;
+    padding: 1em;
+}
