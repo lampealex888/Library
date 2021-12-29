@@ -52,12 +52,12 @@ function displayBooks() {
         }
         book.appendChild(deleteBtn)
 
-        let deleteBtn = document.createElement('button')
-        deleteBtn.innerText = "Mark as Read"
-        deleteBtn.onclick=function() {
-            removeBook(i)
+        let readBtn = document.createElement('button')
+        readBtn.innerText = "Mark as Read/Not Read"
+        readBtn.onclick=function() {
+            readBook(i)
         }
-        book.appendChild(deleteBtn)
+        book.appendChild(readBtn)
         bookshelf.appendChild(book)
     }
 }
@@ -70,6 +70,16 @@ function resetBooks() {
 
 function removeBook(indice) {
     myLibrary.splice(indice, 1)
+    resetBooks()
+    displayBooks()
+}
+
+function readBook(indice) {
+    if (myLibrary[indice].read == false) {
+        myLibrary[indice].read = true
+    } else {
+        myLibrary[indice].read = false
+    }
     resetBooks()
     displayBooks()
 }
